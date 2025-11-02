@@ -27,6 +27,7 @@ function handleLogin(event: Event) {
         .then((user) => {
             localStorage.setItem('username', user.username);
             localStorage.setItem('role', user.role);
+            localStorage.setItem('id', user.id.toString());
             setUserLoginState(true);
         })
         .catch((error) => {

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restorani</title>
+    <link rel="stylesheet" href="restaurants.scss">
+    <script type="module" src="restaurants.ts"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="../../../index.html">Home</a></li>
+            <li class="nav-item" id="logout"><a href="../../../index.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="forma">
+        <form id="form">
+            <label for="name">Ime:</label>
+            <input id="name" name="name" type="text" />
+            <span id="nameError"></span>
+            <br />
+
+            <label for="description">Opis</label>
+            <input id="description" name="description" type="text" />
+            <span id="descriptionError"></span>
+            <br />
+
+            <label for="capacity">Kapacitet</label>
+            <input id="capacity" name="capacity" type="number" />
+            <span id="capacityError"></span>
+            <br />
+
+            <label for="imageUrl">Slika</label>
+            <input id="imageUrl" name="imageUrl" type="text" />
+            <span id="imageUrlError"></span>
+            <br />
+
+            <lebel for="latitude">Geografska sirina:</lebel>
+            <input id="latitude" name="latitude" type="number" />
+            <span id="latitudeError"></span>
+            <br />
+
+            <lebel for="longitude">Geografska duzina:</lebel>
+            <input id="longitude" name="longitude" type="number" />
+            <span id="longitudeError"></span>
+            <br />
+            <div class="actions">
+                <button id="submitBtn" type="button">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
