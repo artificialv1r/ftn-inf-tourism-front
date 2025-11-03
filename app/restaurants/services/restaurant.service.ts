@@ -8,8 +8,8 @@ export class RestaurantService {
     constructor() {
         this.apiUrl = "http://localhost:5105/api/restaurants"
     }
-    getPaged(guideId: string): Promise<Restaurant[]> {
-        return fetch(`${this.apiUrl}?ownerId=${guideId}`)
+    getPaged(ownerId: string): Promise<Restaurant[]> {
+        return fetch(`${this.apiUrl}?ownerId=${ownerId}`)
             .then(response => {
                 if (!response.ok) {
                     return response.text().then(errorMessage => {
