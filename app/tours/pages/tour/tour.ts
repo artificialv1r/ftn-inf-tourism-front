@@ -61,24 +61,24 @@ function renderData(): void {
                 newRow.appendChild(cell5);
 
                 // dodajemo dugme za ažuriranje u svaki red
-                const cel6 = document.createElement('td');
+                const cell6 = document.createElement('td');
                 const editButton = document.createElement('button');
                 editButton.textContent = 'Izmeni';
                 editButton.style.width = 'auto';
-                cel6.style.textAlign = 'center';
+                cell6.style.textAlign = 'center';
 
                 const tourId = tours[i].id;
                 editButton.onclick = function () {
                     window.location.href = `../tourForm/tourForm.html?id=${tourId}`;
                 };
-                cel6.appendChild(editButton);
-                newRow.appendChild(cel6);
+                cell6.appendChild(editButton);
+                newRow.appendChild(cell6);
 
-                const cel7 = document.createElement('td');
+                const cell7 = document.createElement('td');
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Ukloni';
                 deleteButton.style.width = 'auto';
-                cel7.style.textAlign = 'center';
+                cell7.style.textAlign = 'center';
 
                 // stavljamo da se klikom na dugme pošalje DELETE zahtev za brisanje korisnika
                 deleteButton.onclick = function () {
@@ -90,8 +90,8 @@ function renderData(): void {
                             console.error(error.status, error.text);
                         });
                 };
-                cel7.appendChild(deleteButton);
-                newRow.appendChild(cel7);
+                cell7.appendChild(deleteButton);
+                newRow.appendChild(cell7);
 
                 // dodajemo red u tabelu
                 table.appendChild(newRow);
