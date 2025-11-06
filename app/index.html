@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books</title>
-    <link rel="stylesheet" href="index.scss">
+    <link rel="stylesheet" href="index.scss" />
     <script type="module" src="index.ts"></script>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <ul class="nav-list">
-            <li class="nav-item"><a href="index.html">Home</a></li>
-            <li class="nav-item" id="login"><a href="users/pages/login/login.html">Login</a></li>
-            <li class="nav-item" id="logout"><a href="index.html">Logout</a></li>
-        </ul>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item" id="login">
+          <a href="users/pages/login/login.html">Login</a>
+        </li>
+        <li class="nav-item" id="logout"><a href="index.html">Logout</a></li>
+      </ul>
     </nav>
 
     <button id="pregledRestorana" type="button">Pregled restorana</button>
 </body>
+</html>
+    <button
+      onclick="window.location.href='/tours/pages/tourForm/tourForm.html'"
+    >
+      Dodaj Turu
+    </button>
+    <button onclick="window.location.href='/tours/pages/tour/tour.html'">
+      Pregled Tura
+    </button>
+  </body>
 </html>

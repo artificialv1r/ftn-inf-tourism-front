@@ -17,7 +17,7 @@ function setUserLoginState(isLoggedIn: boolean) {
 
 function handleLogin(event: Event) {
     event.preventDefault();
-    
+
     const form = document.querySelector("form") as HTMLFormElement;
     const formData = new FormData(form);
     const username = formData.get("username") as string;
@@ -38,6 +38,7 @@ function handleLogin(event: Event) {
 function handleLogout() {
     localStorage.removeItem('username');
     localStorage.removeItem('role');
+    localStorage.removeItem('id');
     setUserLoginState(false);
 }
 
