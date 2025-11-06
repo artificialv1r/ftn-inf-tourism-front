@@ -1,0 +1,31 @@
+@import "../../../styles/global";
+
+a {
+  text-decoration: none;
+}
+
+#main {
+  height: calc(100dvh - 60px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    input {
+      padding: 5px;
+      border: 1px solid gray;
+    }
+    label {
+      color: black;
+    }
+  }
+}

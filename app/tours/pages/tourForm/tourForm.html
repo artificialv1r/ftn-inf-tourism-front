@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kreiraj Turu</title>
+    <link rel="stylesheet" href="tourForm.scss" />
+    <script type="module" src="tourForm.ts"></script>
+  </head>
+  <body>
+    <section id="header">
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+          </li>
+          <li class="nav-item" id="logout">
+            <a href="../../../index.html">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section id="main">
+      <div id="form">
+        <div>
+          <label for="name">Naziv ture:</label>
+          <input id="name" name="name" type="text" />
+        </div>
+        <div>
+          <label for="description">Opis:</label>
+          <textarea id="description" name="description"></textarea>
+        </div>
+        <div>
+          <label for="dateTime">Datum i vreme:</label>
+          <input id="dateTime" name="dateTime" type="date" />
+        </div>
+        <div>
+          <label for="maxGuests">Maksimalan broj gostiju:</label>
+          <input id="maxGuests" name="maxGuests" type="number" />
+        </div>
+        <button id="submit">Submit</button>
+      </div>
+    </section>
+  </body>
+</html>
