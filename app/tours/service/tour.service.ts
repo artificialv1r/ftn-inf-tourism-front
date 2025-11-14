@@ -1,5 +1,7 @@
 import { Tour } from "../model/tour.model";
 import { TourFormData } from "../model/tourFormData.model";
+import { KeyPoint } from "../model/keypoint.model";
+import { KeyPointFormData } from "../model/keypointFormData.model";
 
 export class TourService {
     private apiUrl: string;
@@ -92,6 +94,47 @@ export class TourService {
 
     deleteTour(tourId: string): Promise<void> {
         return fetch(`${this.apiUrl}/${tourId}`, { method: 'DELETE' })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+                        throw { status: response.status, message: errorMessage }
+                    })
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error.status)
+                throw error
+            });
+    }
+
+    // Key Point services:
+
+    createKeyPoint(tourId: string, formData: KeyPointFormData) {
+        return fetch(`${this.apiUrl}/${tourId}/key-points`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+                        throw { status: response.status, message: errorMessage }
+                    })
+                }
+                return response.json()
+            })
+            .then((keyPoint: KeyPoint) => {
+                return keyPoint
+            })
+            .catch(error => {
+                console.error('Error:', error.status)
+                throw error
+            })
+    }
+
+    deleteKeyPoint(tourId: string, kpId: string) {
+        return fetch(`${this.apiUrl}/${tourId}/key-points/${kpId}`, { method: 'DELETE' })
             .then(response => {
                 if (!response.ok) {
                     return response.text().then(errorMessage => {
