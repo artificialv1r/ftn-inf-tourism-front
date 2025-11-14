@@ -11,14 +11,18 @@ function initializeForm(): void {
     const id = urlParams.get('id');
     const addKeypointSection = document.querySelector('#add-keypoint-section') as HTMLElement;
     const activeKeypointsSection = document.querySelector('#active-keypoints') as HTMLElement;
+    const publishButton = document.querySelector("#publish") as HTMLButtonElement;
+
     addKeypointSection.classList.add('hidden');
     activeKeypointsSection.classList.add('hidden');
+    publishButton.hidden = true;
 
     if (id) {
         getTourData(id);
         displayKeypoints(id);
         addKeypointSection.classList.remove('hidden');
         activeKeypointsSection.classList.remove('hidden');
+        publishButton.hidden = false;
     } else {
         addKeypointSection.style.display = 'none';
         activeKeypointsSection.style.display = 'none';
@@ -31,7 +35,7 @@ function initializeForm(): void {
         button.addEventListener("click", submit)
     }
 
-    const publishButton = document.querySelector("#publish") as HTMLButtonElement;
+
     if (publishButton) {
         publishButton.addEventListener("click", publishTour);
     }
