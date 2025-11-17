@@ -17,6 +17,7 @@ function setUserLoginState(isLoggedIn: boolean) {
 function handleLogout() {
     localStorage.removeItem('username');
     localStorage.removeItem('role');
+    localStorage.removeItem('id');
     setUserLoginState(false);
 }
 
