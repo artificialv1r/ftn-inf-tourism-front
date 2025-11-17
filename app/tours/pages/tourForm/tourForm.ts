@@ -35,7 +35,6 @@ function initializeForm(): void {
         button.addEventListener("click", submit)
     }
 
-
     if (publishButton) {
         publishButton.addEventListener("click", publishTour);
     }
@@ -119,6 +118,7 @@ function displayKeypoints(tourId: string,): void {
     const keypointList = document.querySelector('#keypoints-list')
     keypointList.innerHTML = "";
 
+    // prebaciti u novu funkciju render Keypoints
     tourService.getById(tourId)
         .then(tour => {
             tour.keyPoints.forEach(kp => {
@@ -165,7 +165,7 @@ function displayKeypoints(tourId: string,): void {
                             }
                         })
                         .then(() => {
-                            window.location.reload();
+                            initializeForm()
                         })
                         .catch(error => {
                             console.error(error.status, error.text);
@@ -271,7 +271,7 @@ function handleAddKeyPoint() {
             return tourService.createKeyPoint(tourId, kpData);
         })
         .then(() => {
-            window.location.reload();
+            initializeForm();
         })
         .catch(err => {
             console.error("Failed to add keypoint:", err);
