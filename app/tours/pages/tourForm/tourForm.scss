@@ -1,31 +1,137 @@
 @import "../../../styles/global";
 
-a {
-  text-decoration: none;
-}
-
 #main {
   height: calc(100dvh - 60px);
-  width: 100%;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  padding: 20px;
+
+  input {
+    border: 1px solid gray;
+  }
+
   #form {
+    width: 1280px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    gap: 10px;
-    div {
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    gap: 20px;
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    #add-tour {
+      border-top: 2px solid $primary-color;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      width: 100%;
+      gap: 20px;
+      padding: 20px 0px;
     }
-    input {
-      padding: 5px;
-      border: 1px solid gray;
+
+    #tour-data,
+    #keypoint-data {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      row-gap: 20px;
+      width: 100%;
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
     }
     label {
       color: black;
+      font-size: 18px;
+    }
+
+    #publish {
+      background-color: $accent-color;
+      font-weight: bold;
+      &:disabled {
+        border: 1px solid gray;
+        color: gray;
+        background-color: transparent;
+      }
+    }
+
+    #submit {
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #tour-details,
+    #keypoint-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      textarea {
+        min-width: 100%;
+        height: 100px;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .hidden {
+    display: none;
+  }
+  #add-keypoint-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #active-keypoints {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    #keypoints-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .kp-list-element {
+        display: grid;
+        grid-template-columns: 90% 10%;
+        gap: 20px;
+
+        .kp-cell {
+          display: flex;
+          flex-direction: column;
+          button {
+            width: fit-content;
+            cursor: pointer;
+            background-color: $warn-color;
+            font-weight: bold;
+          }
+
+          h4 {
+            margin: 0;
+          }
+        }
+      }
     }
   }
 }
