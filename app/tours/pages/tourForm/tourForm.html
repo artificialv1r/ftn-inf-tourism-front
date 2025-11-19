@@ -8,18 +8,26 @@
     <script type="module" src="tourForm.ts"></script>
   </head>
   <body>
-    <section id="header">
-      <nav class="navbar">
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <div class="nav-item" id="logo">
+          <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+        </div>
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
-          </li>
-          <li class="nav-item" id="logout">
-            <a href="../../../index.html">Logout</a>
+              <li class="nav-item hidden" id="my-tours">
+                <a href="../tours/pages/tour/tour.html">My Tours</a>
+              </li>
+             <li class="nav-item hidden" id="my-reservations">
+                <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+              </li>
+              <li class="nav-item" id="logout">
+                <a href="../../../index.html">Logout</a>
+              </li>
           </li>
         </ul>
-      </nav>
-    </section>
+      </div>
+    </nav>
 
     <section id="main">
       <div id="form">

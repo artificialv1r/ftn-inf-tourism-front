@@ -24,7 +24,10 @@ label {
   color: $primary-color;
 }
 main {
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 0px 80px;
+  height: calc(100dvh - 80px);
 }
 input {
   padding: 8px;
@@ -42,6 +45,10 @@ button {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 .navbar {
   background: linear-gradient(
     45deg,
@@ -49,29 +56,28 @@ button {
     $accent-color,
     $primary-color
   );
-  padding: 25px 40px;
-
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .nav-wrapper {
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .nav-list {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    justify-content: end;
+    gap: 20px;
   }
 
   .nav-item {
-    margin-right: 15px;
-
     a {
       color: white;
       text-decoration: none;
+      font-size: 18px;
     }
-  }
-
-  #login {
-    margin-left: auto;
-  }
-
-  #logout {
-    margin-left: auto;
   }
 }

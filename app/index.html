@@ -9,19 +9,75 @@
   </head>
   <body>
     <nav class="navbar">
-      <ul class="nav-list">
-        <li class="nav-item">
+      <div class="nav-wrapper">
+        <div class="nav-item" id="logo">
           <a href="index.html">Putovanje Kroz Gastronomiju</a>
-        </li>
-        <li class="nav-item" id="login">
-          <a href="users/pages/login/login.html">Login</a>
-        </li>
-        <li class="nav-item" id="logout"><a href="index.html">Logout</a></li>
-      </ul>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+              <li class="nav-item" id="my-tours">
+                <a href="/tours/pages/tour/tour.html">My Tours</a>
+              </li>
+              <li class="nav-item" id="my-restaurants">
+                <a href="/restaurants/pages/restaurants/restaurant.html">My Restaurants</a>
+              </li>
+              <li class="nav-item" id="my-reservations">
+                <a href="/app/users/pages/reservations/reservations.html">My Reservations</a>
+              </li>
+              <li class="nav-item" id="login">
+                <a href="users/pages/login/login.html">Login</a>
+              </li>
+              <li class="nav-item" id="logout">
+                <a href="index.html">Logout</a>
+              </li>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main>
-      <button id="reviewRestaurant" type="button">Pregled restorana</button>
+      <section id="hero-section-tourists">
+        <div class="text-container">
+          <h2>Tvoj vodič kroz <span>Najukusnije </span> kutke Sveta</h2>
+          <p>
+            Putovanje kroz gastronomiju je aplikacija koja povezuje turiste,
+            vodiče i vlasnike restorana u jedinstveno iskustvo koje kombinuje
+            turizam i gastronomiju.
+          </p>
+
+          <div class="button-section">
+            <button
+              onclick="window.location.href='/restaurants/pages/overview/overview.html'"
+              type="button"
+            >
+              Restorani
+            </button>
+            <button
+              onclick="window.location.href='/tours/pages/overview/overview.html'"
+            >
+              Destinacije
+            </button>
+          </div>
+        </div>
+        <div class="image-container">
+          <div class="first-image">
+            <img
+              src="https://unforgettabletravel.com/wp-content/uploads/2023/02/Women-hot-air-balloon.jpg"
+              alt=""
+              width="60%"
+            />
+          </div>
+          <div class="second-image">
+            <img
+              src="https://vigotours.com/upload/blog/blog-1746208099.png"
+              alt=""
+              width="60%"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- <button id="reviewRestaurant" type="button">Pregled restorana</button>
       <button
         onclick="window.location.href='/tours/pages/tourForm/tourForm.html'"
       >
@@ -29,7 +85,7 @@
       </button>
       <button onclick="window.location.href='/tours/pages/tour/tour.html'">
         Pregled Tura
-      </button>
+      </button> -->
     </main>
   </body>
 </html>
