@@ -1,8 +1,10 @@
 @import "../../../styles/global";
 
-#main {
-  padding: 40px;
-
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: start;
   .table-wrapper {
     border-radius: 12px;
     overflow: hidden;
@@ -26,6 +28,17 @@
       color: black;
       font-size: 18px;
       font-weight: normal;
+    }
+  }
+  .add-btn-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding: 20px 0;
+    button {
+      width: fit-content;
+      padding: 10px 25px;
     }
   }
 }
