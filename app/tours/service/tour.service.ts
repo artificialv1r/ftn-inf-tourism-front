@@ -29,6 +29,25 @@ export class TourService {
             });
     }
 
+    getAll(page: number, pageSize: number, orderBy: string, orderDirection: string): Promise<{ data: Tour[], totalCount: number }> {
+        return fetch(`${this.apiUrl}?guideId=0&page=${page}&pageSize=${pageSize}&orderBy=${orderBy}&orderDirection=${orderDirection}`)
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+                        throw { status: response.status, message: errorMessage }
+                    })
+                }
+                return response.json()
+            })
+            .then((resp: { data: Tour[], totalCount: number }) => {
+                return resp;
+            })
+            .catch(error => {
+                console.error('Error:', error.status)
+                throw error
+            });
+    }
+
     getById(id: string): Promise<Tour> {
         return fetch(`${this.apiUrl}/${id}`)
             .then(response => {
