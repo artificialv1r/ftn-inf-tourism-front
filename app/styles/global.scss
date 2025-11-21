@@ -1,7 +1,7 @@
 $primary-color: #6b3428;
 $accent-color: #c09287;
-$warn-color: #f7c9bd;
-$button-color: #28a745;
+$warn-color: #eb7257;
+$button-color: #286b53;
 $background-color: #eae7e6;
 
 body {
@@ -24,7 +24,10 @@ label {
   color: $primary-color;
 }
 main {
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 0px 80px;
+  height: calc(100dvh - 80px);
 }
 input {
   padding: 8px;
@@ -34,11 +37,16 @@ input {
 
 button {
   padding: 10px 15px;
-  background-color: $button-color;
+  background-color: $primary-color;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 .navbar {
@@ -48,29 +56,28 @@ button {
     $accent-color,
     $primary-color
   );
-  padding: 25px 40px;
-
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .nav-wrapper {
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .nav-list {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    justify-content: end;
+    gap: 20px;
   }
 
   .nav-item {
-    margin-right: 15px;
-
     a {
       color: white;
       text-decoration: none;
+      font-size: 18px;
     }
-  }
-
-  #login {
-    margin-left: auto;
-  }
-
-  #logout {
-    margin-left: auto;
   }
 }

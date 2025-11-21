@@ -8,37 +8,132 @@
     <script type="module" src="tourForm.ts"></script>
   </head>
   <body>
-    <section id="header">
-      <nav class="navbar">
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <div class="nav-item" id="logo">
+          <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+        </div>
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
-          </li>
-          <li class="nav-item" id="logout">
-            <a href="../../../index.html">Logout</a>
+              <li class="nav-item hidden" id="my-tours">
+                <a href="../tours/pages/tour/tour.html">My Tours</a>
+              </li>
+             <li class="nav-item hidden" id="my-reservations">
+                <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+              </li>
+              <li class="nav-item" id="logout">
+                <a href="../../../index.html">Logout</a>
+              </li>
           </li>
         </ul>
-      </nav>
-    </section>
+      </div>
+    </nav>
+
     <section id="main">
       <div id="form">
-        <div>
-          <label for="name">Naziv ture:</label>
-          <input id="name" name="name" type="text" />
+        <h2>Provide Tour Data</h2>
+        <section id="add-tour">
+          <h3>Tour Data</h3>
+          <div id="tour-data">
+            <div>
+              <label for="name">Name:</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter the name of tour"
+              />
+            </div>
+
+            <div>
+              <label for="dateTime">Date & time:</label>
+              <input id="dateTime" name="dateTime" type="datetime-local" />
+            </div>
+            <div>
+              <label for="maxGuests">Max Tourists</label>
+              <input
+                id="maxGuests"
+                name="maxGuests"
+                type="number"
+                placeholder="Enter the maximum number of tourists"
+              />
+            </div>
+          </div>
+          <div id="tour-details">
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Tour description"
+            ></textarea>
+          </div>
+
+          <section id="add-keypoint-section" class="hidden">
+            <h3>Key Points Data</h3>
+            <div id="keypoint-data">
+              <div>
+                <label for="keypoint-name">Name:</label>
+                <input
+                  id="keypoint-name"
+                  name="keypoint-name"
+                  type="text"
+                  placeholder="Enter the name of key point"
+                />
+              </div>
+
+              <div>
+                <label for="keypoint-image">Image:</label>
+                <input
+                  id="keypoint-image"
+                  name="keypoint-image"
+                  type="text"
+                  placeholder="Enter the URL of key point image"
+                />
+              </div>
+
+              <div>
+                <label for="keypoint-latitude">Latitude:</label>
+                <input
+                  id="keypoint-latitude"
+                  name="keypoint-latitude"
+                  type="number"
+                  placeholder="Enter the latitude"
+                />
+              </div>
+              <div>
+                <label for="keypoint-latitude">Longitude:</label>
+                <input
+                  id="keypoint-longitude"
+                  name="keypoint-longitude"
+                  type="number"
+                  placeholder="Enter the Longitude"
+                />
+              </div>
+            </div>
+            <div id="keypoint-details">
+              <label for="keypoint-description">Description:</label>
+              <textarea
+                id="keypoint-description"
+                name="keypoint-description"
+                placeholder="Key point description"
+              ></textarea>
+            </div>
+            <div>
+              <button id="addKP">+ Add key point</button>
+            </div>
+          </section>
+        </section>
+
+        <section id="active-keypoints" class="hidden">
+          <div id="keypoints-list">
+            <h3>Tour Keypoints</h3>
+          </div>
+        </section>
+
+        <div class="buttons">
+          <button id="publish">Publish</button>
+          <button id="submit">Submit</button>
         </div>
-        <div>
-          <label for="description">Opis:</label>
-          <textarea id="description" name="description"></textarea>
-        </div>
-        <div>
-          <label for="dateTime">Datum i vreme:</label>
-          <input id="dateTime" name="dateTime" type="date" />
-        </div>
-        <div>
-          <label for="maxGuests">Maksimalan broj gostiju:</label>
-          <input id="maxGuests" name="maxGuests" type="number" />
-        </div>
-        <button id="submit">Submit</button>
       </div>
     </section>
   </body>

@@ -8,34 +8,50 @@
     <script type="module" src="tour.ts"></script>
   </head>
   <body>
-    <section id="header">
-      <nav class="navbar">
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <div class="nav-item" id="logo">
+          <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+        </div>
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
-          </li>
-          <li class="nav-item" id="logout">
-            <a href="../../../index.html">Logout</a>
+              <li class="nav-item" id="my-tours">
+                <a href="../tours/pages/tour/tour.html">My Tours</a>
+              </li>
+              <li class="nav-item" id="my-reservations">
+                <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+              </li>
+              <li class="nav-item" id="logout">
+                <a href="../../../index.html">Logout</a>
+              </li>
           </li>
         </ul>
-      </nav>
-    </section>
-    <section id="main">
+      </div>
+    </nav>
+
+    <main>
       <div id="info"></div>
-      <table>
-        <thead class="hidden">
-          <tr>
-            <th>Naziv</th>
-            <th>Opis</th>
-            <th>Datum i vreme</th>
-            <th>Limit</th>
-            <th>Status</th>
-            <th>Uredi</th>
-            <th>Brisanje</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </section>
+      <div class="table-wrapper">
+        <table>
+          <thead class="hidden">
+            <tr>
+              <th>Naziv</th>
+              <th>Opis</th>
+              <th>Datum i vreme</th>
+              <th>Limit</th>
+              <th>Status</th>
+              <th>Uredi</th>
+              <th>Brisanje</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          
+        </table>
+        <div class="add-btn-section">
+        <button onclick="window.location.href='/tours/pages/tourForm/tourForm.html'" id="addTour">+ Add Tour</button>
+      </div>
+      </div>
+      
+    </main>
   </body>
 </html>

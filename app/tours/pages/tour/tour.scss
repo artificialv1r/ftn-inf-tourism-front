@@ -1,24 +1,44 @@
 @import "../../../styles/global";
 
-a {
-  text-decoration: none;
-}
-#main {
-  padding: 20px 40px;
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: start;
+  .table-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+  }
   table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    tr {
+      background-color: whitesmoke;
+    }
 
     th,
     td {
-      padding: 10px;
-      border: 1px solid $button-color;
+      padding: 15px;
+      max-width: 150px;
       text-align: left;
     }
 
     th {
-      background-color: $primary-color;
-      color: white;
+      color: black;
+      font-size: 18px;
+      font-weight: normal;
+    }
+  }
+  .add-btn-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding: 20px 0;
+    button {
+      width: fit-content;
+      padding: 10px 25px;
     }
   }
 }

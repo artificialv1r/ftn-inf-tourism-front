@@ -1,9 +1,12 @@
+import { KeyPoint } from "./keypoint.model";
+
 export interface TourFormData {
     id?: number;
     name: string;
     description: string;
-    dateTime: Date;
+    dateTime: string;
     maxGuests: number;
     status?: string;
     guideId: number;
+    keyPoints?: KeyPoint[];
 }

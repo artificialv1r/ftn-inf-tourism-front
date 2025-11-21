@@ -1,22 +1,23 @@
 const loginLink = document.querySelector('#login') as HTMLElement;
 const logoutLink = document.querySelector('#logout') as HTMLElement;
-const reviewBtn = document.querySelector('#reviewRestaurant') as HTMLButtonElement;
+const myTours = document.querySelector('#my-tours') as HTMLElement;
+const myRestaurants = document.querySelector('#my-restaurants') as HTMLElement;
+const myReservations = document.querySelector('#my-reservations') as HTMLElement;
 
 function setUserLoginState(isLoggedIn: boolean) {
     if (isLoggedIn) {
         loginLink.style.display = 'none';
         logoutLink.style.display = 'block';
-        reviewBtn.style.display = 'block';
     } else {
         loginLink.style.display = 'block';
         logoutLink.style.display = 'none';
-        reviewBtn.style.display = 'none';
     }
 }
 
 function handleLogout() {
     localStorage.removeItem('username');
     localStorage.removeItem('role');
+    localStorage.removeItem('id');
     setUserLoginState(false);
 }
 
@@ -27,16 +28,31 @@ function checkLoginStatus() {
     } else {
         setUserLoginState(false);
     }
+    checkRoleStatus();
 }
 
-reviewBtn.addEventListener("click", function () {
-    const role = localStorage.getItem('role');
-    if (role !== "vlasnik") {
-        window.alert("Morate biti prijavljeni kao vlasnik da biste videli restorane.")
-    } else {
-        window.location.href = "restaurants/pages/restaurant/restaurant.html";
+function checkRoleStatus() {
+    const role = localStorage.getItem('role'); {
+
+        if (role == "vodic") {
+            myTours.style.display = "block"
+        } else {
+            myTours.style.display = "none"
+        }
+
+        if (role == "vlasnik") {
+            myRestaurants.style.display = "block"
+        } else {
+            myRestaurants.style.display = "none"
+        }
+
+        if (!role) {
+            myReservations.style.display = "none";
+            myTours.style.display = "none";
+            myRestaurants.style.display = "none"
+        }
     }
-});
+}
 
 
 const logoutElement = document.querySelector('#logout');
