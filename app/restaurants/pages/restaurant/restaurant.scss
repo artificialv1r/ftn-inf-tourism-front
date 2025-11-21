@@ -1,0 +1,40 @@
+@use '../../../styles/global.scss';
+
+#main {
+    padding: 40px;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: start;
+
+        .table {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+
+            tr {
+                background-color: whitesmoke;
+            }
+
+            th,
+            td {
+                padding: 15px;
+                max-width: 150px;
+                text-align: left;
+            }
+
+            th {
+                color: black;
+                font-size: 18px;
+                font-weight: normal;
+            }
+        }
+    }
+}
