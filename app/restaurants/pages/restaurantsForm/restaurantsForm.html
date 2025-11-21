@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restorani</title>
+    <link rel="stylesheet" href="restaurantsForm.scss">
+    <script type="module" src="restaurantsForm.ts"></script>
+</head>
+
+<body>
+    <section id="header">
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="../../../index.html">Home</a>
+                </li>
+                <li class="nav-item" id="logout"><a href="../../../index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section id="main">
+        <div id="form">
+            <h2>Provide Restaurant Data</h2>
+            <section id="add-restaurant">
+                <h3>Restaurant Data</h3>
+                <div id="restaurant-data">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input id="name" name="name" type="text" placeholder="Enter the name of restaurant" />
+                        <span id="nameError"></span>
+                    </div>
+                    <div>
+                        <label for="capacity">Capacity</label>
+                        <input id="capacity" name="capacity" type="number"
+                            placeholder="Enter the maximum number of guests" />
+                        <span id="capacityError"></span>
+                    </div>
+
+                    <div>
+                        <label for="imageUrl">Image</label>
+                        <input id="imageUrl" name="imageUrl" type="text"
+                            placeholder="Enter the URL of restaurant image" />
+                        <span id="imageUrlError"></span>
+                    </div>
+
+                    <div>
+                        <lebel for="latitude">Latitude:</lebel>
+                        <input id="latitude" name="latitude" type="number" placeholder="Enter the latitude" />
+                        <span id="latitudeError"></span>
+                    </div>
+
+                    <div>
+                        <lebel for="longitude">Longitude:</lebel>
+                        <input id="longitude" name="longitude" type="number" placeholder="Enter the longitude" />
+                        <span id="longitudeError"></span>
+                    </div>
+
+                    <div id="restaurant-details">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" type="text"
+                            placeholder="Enter the description"></textarea>
+                        <span id="descriptionError"></span>
+                    </div>
+                </div>
+                <section id="add-meal" class="hidden">
+                    <h3>Meal Data</h3>
+                    <div id="meal-form">
+                        <div>
+                            <label for="nameMeal">Name:</label>
+                            <input id="nameMeal" name="nameMeal" type="text" placeholder="Enter the name of meal" />
+                            <span id="nameMealError"></span>
+                        </div>
+                        <div>
+                            <label for="price">Price</label>
+                            <input id="price" name="price" type="number" placeholder="Enter the price of meal" />
+                            <span id="priceError"></span>
+                        </div>
+                        <div>
+                            <label for="ingredients">Ingredients</label>
+                            <input id="ingredients" name="ingredients" type="text"
+                                placeholder="Enter the ingredients of meal" />
+                            <span id="ingredientsUrlError"></span>
+                        </div>
+                        <div>
+                            <label for="imageMeal">Image</label>
+                            <input id="imageMeal" name="imageMeal" type="text"
+                                placeholder="Enter the URL of meal image" />
+                            <span id="imageMealError"></span>
+                        </div>
+
+                        <div>
+                            <button id="addMeal" type="button">+ Add meal</button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <div id="active-meals" class="hidden">
+            </div>
+            <div class="buttons">
+                <button type="button" id="publish" class="hidden" disabled>Publish</button>
+                <button id="submitBtn" type="button">Submit</button>
+            </div>
+    </section>
+</body>
+
+</html>

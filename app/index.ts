@@ -34,7 +34,7 @@ reviewBtn.addEventListener("click", function () {
     if (role !== "vlasnik") {
         window.alert("Morate biti prijavljeni kao vlasnik da biste videli restorane.")
     } else {
-        window.location.href = "restaurants/pages/restaurants/restaurant.html";
+        window.location.href = "restaurants/pages/restaurant/restaurant.html";
     }
 });
 
