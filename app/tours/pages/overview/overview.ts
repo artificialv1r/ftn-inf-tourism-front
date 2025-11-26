@@ -169,7 +169,9 @@ async function renderTours(tours: Tour[]): Promise<void> {
 
         const btn = document.createElement('button');
         btn.textContent = "View Details";
-        btn.disabled = true;
+        btn.onclick = function () {
+            window.location.href = `../reservation/reservation.html?tourId=${tour.id}`;
+        };
 
         detailSection.appendChild(title);
         detailSection.appendChild(description);

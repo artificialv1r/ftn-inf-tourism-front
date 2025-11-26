@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Confirmation</title>
+    <link rel="stylesheet" href="confirmation.scss" />
+    <script type="module" src="confirmation.ts"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <div class="nav-item" id="logo">
+          <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+              
+              <li class="nav-item" id="my-reservations">
+                <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+              </li>
+              <li class="nav-item" id="logout">
+                <a href="../../../index.html">Logout</a>
+              </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div id="title">
+        <h2>Confirmation:</h2>
+        <h3>Thank you <span id="tourist-name"></span> for booking your tour with us!</h3>
+        <p>Your reservation has been successfully confirmed. A confirmation email with all the details has been sent to you. If you don't see it in your inbox, please check your spam or promotions folder.</p>
+      </div>
+      <section id="cancelation-section">
+        <div id="cancelation-info">
+            <div id="cancelation-title">Free 24 Hour Cancellation</div>
+            <div id="cancelation-details">If you wish to cancel or modify your reservation, you can do so up to 24 hours before the tour for a full refund.</div>
+        </div>
+        <div id="button-section">
+            <button id="cancel-button">Cancel</button>
+        </div>
+      </section>
+      <section id="tour-info">
+        <div><h3>Tour Details:</h3></div>
+        <table>
+            <thead>
+                <tr>
+                    <th id="tour-name"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
