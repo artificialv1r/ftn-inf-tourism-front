@@ -9,7 +9,28 @@ export class RestaurantService {
     constructor() {
         this.apiUrl = "http://localhost:5105/api/restaurants"
     }
-    getPaged(ownerId: string): Promise<Restaurant[]> {
+
+    getPaged(ownerId: number, page: number, pageSize: number, orderBy: string, orderDirection: string): Promise<{ data: Restaurant[], totalCount: number }> {
+        return fetch(`${this.apiUrl}?ownerId=${ownerId}&page=${page}&pageSize=${pageSize}&orderBy=${orderBy}&orderDirection=${orderDirection}`)
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+                        throw { status: response.status, message: errorMessage }
+                    });
+                }
+                return response.json();
+            }).then((result) => {
+                return {
+                    data: result.data,
+                    totalCount: result.totalCount
+                };
+            })
+            .catch(error => {
+                console.error('Error:', error.status)
+                throw error
+            });
+    }
+    getByOwner(ownerId: string): Promise<Restaurant[]> {
         return fetch(`${this.apiUrl}?ownerId=${ownerId}`)
             .then(response => {
                 if (!response.ok) {
@@ -127,7 +148,7 @@ export class RestaurantService {
                 throw error
             });
     }
-    deleteMeal(restaurantId:number, mealId:number):Promise<void>{
+    deleteMeal(restaurantId: number, mealId: number): Promise<void> {
         return fetch(`http://localhost:5105/api/restaurants/${restaurantId}/meals/${mealId}`, { method: 'Delete' })
             .then(response => {
                 if (!response.ok) {

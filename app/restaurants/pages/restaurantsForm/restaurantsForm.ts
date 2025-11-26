@@ -7,40 +7,38 @@ import { Meal } from "../../models/meal.model";
 const restaurantService = new RestaurantService;
 
 function submit(id: string): void {
-    const rola = localStorage.getItem('role');
-    if (rola == "vlasnik") {
-        const name = (document.querySelector('#name') as HTMLInputElement).value
-        const description = (document.querySelector('#description') as HTMLInputElement).value
-        const capacity = parseInt((document.querySelector('#capacity') as HTMLInputElement).value)
-        const imageUrl = (document.querySelector('#imageUrl') as HTMLInputElement).value
-        const latitude = parseFloat((document.querySelector('#latitude') as HTMLInputElement).value)
-        const longitude = parseFloat((document.querySelector('#longitude') as HTMLInputElement).value)
-        const ownerId = Number(localStorage.getItem('id'));
+    const name = (document.querySelector('#name') as HTMLInputElement).value
+    const description = (document.querySelector('#description') as HTMLInputElement).value
+    const capacity = parseInt((document.querySelector('#capacity') as HTMLInputElement).value)
+    const imageUrl = (document.querySelector('#imageUrl') as HTMLInputElement).value
+    const latitude = parseFloat((document.querySelector('#latitude') as HTMLInputElement).value)
+    const longitude = parseFloat((document.querySelector('#longitude') as HTMLInputElement).value)
+    const ownerId = Number(localStorage.getItem('id'));
 
 
-        if (!name || !description || !capacity || !imageUrl || !latitude || !longitude) {
-            alert("All fields are required!");
-            return
-        }
+    if (!name || !description || !capacity || !imageUrl || !latitude || !longitude) {
+        alert("All fields are required!");
+        return
+    }
 
-        const formData: RestaurantFormData = { name, description, capacity, imageUrl, latitude, longitude, ownerId }
-        if (id) {
-            restaurantService.update(id, formData)
-                .then(() => {
-                    window.location.href = '/index.html'
-                }).catch(error => {
-                    console.error(error.status, error.text);
-                })
-        } else {
-            restaurantService.add(formData)
-                .then(() => {
-                    window.location.href = '/restaurants/pages/restaurant/restaurant.html'
-                }).catch(error => {
-                    console.error(error.status, error.text)
-                })
-        }
+    const formData: RestaurantFormData = { name, description, capacity, imageUrl, latitude, longitude, ownerId }
+    if (id) {
+        restaurantService.update(id, formData)
+            .then(() => {
+                window.location.href = '/restaurants/pages/restaurant/restaurant.html';
+            }).catch(error => {
+                console.error(error.status, error.text);
+            })
+    } else {
+        restaurantService.add(formData)
+            .then(() => {
+                window.location.href = '/restaurants/pages/restaurant/restaurant.html';
+            }).catch(error => {
+                console.error(error.status, error.text);
+            })
     }
 }
+
 function showMeals(id: string, meals: Meal[]): void {
     const mealsContainer = document.querySelector("#active-meals") as HTMLElement;
     mealsContainer.innerHTML = "";
@@ -56,16 +54,17 @@ function showMeals(id: string, meals: Meal[]): void {
         imageSection.appendChild(image);
 
         const title = document.createElement('h3');
-        title.textContent = meal.name;
+        title.textContent = "Name: " + meal.name;
 
-        const price = document.createElement('p');
-        price.textContent = meal.price.toString();
+        const price = document.createElement('h3');
+        price.textContent = "Price: " + meal.price.toString();
 
-        const ingredients = document.createElement('p');
-        ingredients.textContent = meal.ingredients;
+        const ingredients = document.createElement('h3');
+        ingredients.textContent = "Ingredients: " + meal.ingredients;
 
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Obrisi';
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.backgroundColor = '#eb7257';
         deleteButton.onclick = function () {
             restaurantService.deleteMeal(Number(id), meal.id)
                 .then(() => {
@@ -131,6 +130,7 @@ function checkPublish(id: string, restaurant: Restaurant): void {
         restaurantService.update(id, formData);
     }
 }
+
 function publishRestaurant(id: string): void {
     if (id) {
         restaurantService.getById(id)
@@ -152,14 +152,15 @@ function publishRestaurant(id: string): void {
                         window.location.href = "../restaurant/restaurant.html";
                     })
                     .catch(error => {
-                        console.error("Greška pri objavljivanju:", error);
-                        alert("Neuspešno objavljivanje restorana.");
+                        console.error("Error:", error);
+                        alert("Restaurant publish failed.");
                     });
             }).catch(error => {
                 console.error(error.status, error.text)
             })
     }
 }
+
 function initializeForm(): void {
     const queryString = window.location.search;
     const urlparams = new URLSearchParams(queryString);

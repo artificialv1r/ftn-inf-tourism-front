@@ -8,7 +8,7 @@ function renderData(): void {
     const ownerId = localStorage.getItem("id");
     if (!ownerId) return;
 
-    restaurantService.getPaged(ownerId)
+    restaurantService.getByOwner(ownerId)
         .then(restaurants => {
             const table = document.querySelector('table tbody');
             if (!table) {
@@ -47,7 +47,8 @@ function createCell(text: string): HTMLTableCellElement {
 function createEditCell(restaurantId: number): HTMLTableCellElement {
     const cell = document.createElement("td");
     const button = document.createElement("button");
-    button.textContent = "Izmeni";
+    button.style.background = '#c09287';
+    button.textContent = "Edit";
     button.addEventListener("click", () => {
         window.location.href = `../restaurantsForm/restaurantsForm.html?id=${restaurantId}`;
     });
@@ -57,7 +58,8 @@ function createEditCell(restaurantId: number): HTMLTableCellElement {
 function createDeleteCell(restaurantId: number): HTMLTableCellElement {
     const cell = document.createElement("td");
     const button = document.createElement("button");
-    button.textContent = "Obrisi";
+    button.style.backgroundColor = '#eb7257';
+    button.textContent = "Delete";
     button.addEventListener("click", () => {
         restaurantService.deleteRestaurant(restaurantId.toString())
             .then(() => window.location.reload())

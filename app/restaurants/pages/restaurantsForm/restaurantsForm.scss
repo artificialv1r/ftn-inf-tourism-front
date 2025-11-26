@@ -1,80 +1,245 @@
 @use '../../../styles/global.scss';
 
-
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-#main {
-  height: auto;
+
+.navbar {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+  background-color: black;
+  padding: 15px 40px;
 
-  #form {
+  .nav-list {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    gap: 10px;
+    list-style: none;
+    gap: 20px;
 
+    a {
+      color: white;
+      font-size: 18px;
+      transition: 0.2s;
 
-    input {
-      padding: 5px;
-      border: 1px solid gray;
-    }
-
-    label {
-      color: black;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }
+
+
+#main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+
+#form {
+  width: 1200px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  h2 {
+    margin: 0;
+    padding-bottom: 30px;
+    border-bottom: 2px solid black;
+    font-weight: normal;
+    font-size: 27px;
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 22px;
+  }
+}
+
+#add-restaurant {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 0px;
+
+  #restaurant-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    label{
+      color: black;
+      font-size: 18px;
+    }
+    input,
+    textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid gray;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    #restaurant-details {
+      grid-column: span 2;
+    }
+  }
+}
+
+
+#add-meal {
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  #meal-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid gray;
+      font-size: 16px;
+    }
+
+    label{
+      color:black;
+      font-size: 20px;
+    }
+
+    button {
+      width: 110px;
+      color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
 
 #active-meals {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 1400px;
+  gap: 25px;
 }
 
 .meal-container {
-  background-color: whitesmoke;
+  background-color: white;
   display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+
   width: 100%;
-  gap:10px;
-}
 
-.image-section {
-  width: 30%;
-  display: flex;
+  .image-section {
+    width: 25%;
+    max-height: 100%;
+    overflow: hidden;
 
-  img {
-    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit:fill;
+    }
+  }
+
+  .detail-section {
+    width: 75%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    button {
+      width: fit-content;
+      padding: 8px 14px;
+      border: none;
+      background: black;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }
 
-.detail-section {
-  width: 60%;
+
+.buttons {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
   justify-content: flex-end;
-  padding: 10px;
-
+  margin-top: 20px;
+  gap: 980px;
   button {
-    width: fit-content;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
   }
-}
 
-#publish:enabled {
-  margin: 100px;
-}
+  #submitBtn {
+    color: white;
 
-#publish:disabled {
-  margin: 100px;
-  background-color: grey;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  #publish:enabled {
+    color: white;
+    cursor: pointer;
+  }
+
+  #publish:disabled {
+    background-color: #888;
+    color: white;
+    cursor: not-allowed;
+  }
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
