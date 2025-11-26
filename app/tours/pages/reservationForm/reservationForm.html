@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Reservation</title>
+    <link rel="stylesheet" href="reservationForm.scss" />
+    <script type="module" src="reservationForm.ts"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <div class="nav-item" id="logo">
+          <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+              
+              <li class="nav-item" id="my-reservations">
+                <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+              </li>
+              <li class="nav-item" id="logout">
+                <a href="../../../index.html">Logout</a>
+              </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div id="title">
+        <h3>Availability:</h3>
+      </div>
+      <section id="overview">
+        <div id="tour-info"></div>
+        <div id="reservation-section">
+            <div id="keypoints-section">
+                <h4>Key Points:</h4>
+            </div>
+            <div id="reservation-form">
+                <label for="guests-input" id="guests">Number of tourists: </label>
+                <input id="guests-input" name="guests" type="number">
+                <span id="input-warning"></span>
+            </div>
+        </div>
+        <div id="button-section">
+                    <button id="reserve-button">Reserve</button>
+                </div>
+      </section>
+    </main>
+  </body>
+</html>
