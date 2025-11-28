@@ -13,30 +13,39 @@
     <nav class="navbar">
         <ul class="nav-list">
             <li class="nav-item"><a href="../../../index.html">Home</a></li>
-            <li class="nav-item" id="dodaj"><a href="../../pages/restaurantsForm/restaurantsForm.html">Dodaj
-                    restoran</a></li>
             <li class="nav-item" id="logout"><a href="../../../index.html">Logout</a></li>
         </ul>
     </nav>
     <section id="main">
         <main>
+            <h2>My Restaurants:</h2>
             <div id="table-details">
-                <div class="table"></div>
-                <table>
-                    <thead class="hidden">
-                        <tr>
-                            <th>Name</th>
-                            <th>Decription</th>
-                            <th>Capacity</th>
-                            <th>Latitude</th>
-                            <th>Longitude</th>
-                            <th>Status</th>
-                            <th>Upadate</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                <div class="table">
+                    <table>
+                        <thead class="hidden">
+                            <tr>
+                                <th>Name</th>
+                                <th>Decription</th>
+                                <th>Capacity</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Status</th>
+                                <th>Upadate</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="8">
+                                    <button
+                                        onclick="window.location.href='../../pages/restaurantsForm/restaurantsForm.html'"
+                                        id="addRestaurant" type="button">+ Add Restaurant</button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </main>
     </section>
