@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Overview</title>
+    <link rel="stylesheet" href="restaurantOverview.scss" />
+    <script type="module" src="restaurantOverview.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <div class="nav-item" id="logo">
+                <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item" id="my-reservations">
+                    <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+                </li>
+                <li class="nav-item" id="logout">
+                    <a href="../../../index.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="info">
+            <h2>Find Your Perfect Restaurant</h2>
+            <p>
+                Explore top dining options, discover new flavors, and book your table effortlessly. Browse a curated
+                selection of restaurants offering everything from traditional comfort dishes to modern culinary
+                creations. Learn more about each place, check menus, and find the atmosphere that suits your mood —
+                whether you're planning a casual lunch, a special celebration, or a night out with friends. Enjoy a
+                seamless experience and reserve your spot with just a few clicks.
+            </p>
+        </section>
+        <section id="restaurant-overview">
+            <div id="filters">
+                <ul>
+                    <li>
+                        <label for="pageSize">Show:</label>
+                        <select name="pageSize" id="pageSize">
+                            <option value="5">5 Restaurants</option>
+                            <option value="10">10 Restaurants</option>
+                            <option value="20">20 Restaurants</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="orderBy">Order by:</label>
+                        <select name="orderBy" id="orderBy">
+                            <option value="Name">Name</option>
+                            <option value="Description">Description</option>
+                            <option value="Capacity">Max Guests</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="orderDirection">Direction:</label>
+                        <select name="orderDirection" id="orderDirection">
+                            <option value="ASC">Ascending</option>
+                            <option value="DESC">Descending</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div id="restaurants"></div>
+            <div id="pagination">
+                <button id="prevPage">Previous</button>
+                <span id="currentPage">1</span>
+                <button id="nextPage">Next</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

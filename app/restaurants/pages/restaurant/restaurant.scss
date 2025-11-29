@@ -9,6 +9,10 @@
         gap: 10px;
         justify-content: start;
 
+        h2 {
+            margin-top: 0px;
+        }
+
         .table {
             border-radius: 12px;
             overflow: hidden;
@@ -35,6 +39,15 @@
                 font-size: 18px;
                 font-weight: normal;
             }
+
+            tfoot td {
+                text-align: center;
+                padding: 20px;
+            }
         }
     }
+}
+
+#addRestaurant {
+    margin: 0 auto;
 }
