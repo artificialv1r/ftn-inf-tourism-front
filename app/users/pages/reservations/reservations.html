@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Reservations</title>
+    <link rel="stylesheet" href="reservations.scss" />
+    <script type="module" src="reservations.ts"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <div class="nav-item" id="logo">
+          <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item" id="logout">
+            <a href="../../../index.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="title">
+        <h2>My Reservations</h2>
+        <p>
+          Here you can view all your upcoming and past tour and restaurant
+          reservations. Manage your bookings, check details, and cancel
+          reservations if needed.
+        </p>
+      </section>
+      <section id="tour-reservations">
+        <h3>Tour reservations</h3>
+        <div>
+          <table id="active-tours">
+            <thead>
+              <tr>
+                <th>Upcoming tours:</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div>
+          <table id="finished-tours">
+            <thead>
+              <tr>
+                <th>Finished tours:</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
