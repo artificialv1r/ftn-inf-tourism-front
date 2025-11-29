@@ -105,8 +105,14 @@ async function renderTour(tourId: string): Promise<void> {
         buttonSpace.className = "button-space"
         const reservationButton = document.createElement('button')
         reservationButton.textContent = "Reserve";
-        reservationButton.onclick = function () {
-            window.location.href = `../reservationForm/reservationForm.html?tourId=${tour.id}`;
+
+        const role = localStorage.getItem('role')
+        if (role === 'turista') {
+            reservationButton.onclick = function () {
+                window.location.href = `../reservationForm/reservationForm.html?tourId=${tour.id}`;
+            }
+        } else {
+            reservationButton.disabled = true;
         }
 
         tourInfo.appendChild(title)

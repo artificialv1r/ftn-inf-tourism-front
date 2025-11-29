@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Review</title>
+    <link rel="stylesheet" href="tourReview.scss" />
+    <script type="module" src="tourReview.ts"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <div class="nav-item" id="logo">
+          <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+              
+              <li class="nav-item" id="my-reservations">
+                <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+              </li>
+              <li class="nav-item" id="logout">
+                <a href="../../../index.html">Logout</a>
+              </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="intro">
+        <h2>Tour Review:</h2>
+        <p>Feedback helps us improve our services and assist future travelers in choosing the perfect adventure.</p>
+      </section>
+      <section id="tour-info">
+        <table>
+            <thead>
+                <tr>
+                    <th id="tour-name"></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+      </section>
+
+      <section id="average">
+       </section>
+
+      <section>
+        <h2>Recent Reviews:</h2>
+        <div id="tour-reviews">
+
+        </div>
+      </section>
+
+      <section id="rate-section" class="hidden">
+        <h3>Leave a Review</h3>
+        <h4>We hope you had a memorable experience. Your feedback helps us improve our services and assist future travelers in choosing the perfect adventure.</h4>
+        <p>Please take a moment to rate your experience and share your thoughts about the tour.</p>
+        <label for="rate">How would you rate your tour?</label>
+        <select name="rate" id="rate">
+            <option value=5>⭐ ⭐ ⭐ ⭐ ⭐</option>
+            <option value=4>⭐ ⭐ ⭐ ⭐</option>
+            <option value=3>⭐ ⭐ ⭐</option>
+            <option value=2>⭐ ⭐</option>
+            <option value=1>⭐</option>
+        </select>
+        <label for="comment">We care about you opinion:</label>
+        <textarea name="opinion" id="opinion"></textarea>
+        <div>
+            <button id="submit-button">Submit</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

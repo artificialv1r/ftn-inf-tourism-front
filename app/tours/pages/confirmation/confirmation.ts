@@ -10,14 +10,22 @@ function init(): void {
     const tourId = urlParams.get('tourId');
     const reservationId = urlParams.get('reservationId')
 
+    if (!tourId) {
+        console.error('Tour ID not found in URL parameters');
+        alert('Invalid tour. Missing tour ID.');
+        return;
+    }
+
     displayKeypoints(tourId)
 
     if (reservationId && tourId) {
         const cancelButton = document.querySelector('#cancel-button') as HTMLButtonElement;
 
-        cancelButton.addEventListener("click", async () => {
-            await cancelReservation(reservationId, tourId);
-        });
+        if (cancelButton) {
+            cancelButton.addEventListener("click", async () => {
+                await cancelReservation(reservationId, tourId);
+            });
+        }
     }
 }
 
@@ -25,10 +33,23 @@ function displayKeypoints(tourId: string,): void {
     const keypointList = document.querySelector('table tbody')
     const listTitle = document.querySelector('#tour-name')
 
+    if (!keypointList) {
+        console.error('Keypoint list element not found');
+        return;
+    }
+
     keypointList.innerHTML = "";
 
     tourService.getById(tourId)
         .then(tour => {
+            if (!tour.keyPoints || tour.keyPoints.length === 0) {
+                keypointList.innerHTML = '<tr><td>No key points available for this tour.</td></tr>';
+                return;
+            }
+
+            if (listTitle) {
+                listTitle.textContent = tour.name;
+            }
             tour.keyPoints.forEach(kp => {
 
                 listTitle.textContent = tour.name;
