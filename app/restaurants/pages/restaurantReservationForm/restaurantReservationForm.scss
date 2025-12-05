@@ -1,0 +1,56 @@
+@use '../../../styles/global.scss';
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  #reservation-section {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    margin: 40px;
+  }
+
+  #button-section {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  #reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  label {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  input {
+    width: 150px;
+  }
+
+  #meal-type{
+    width: 170px;
+    height: 38px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: medium;
+  }
+
+  #input-warning {
+    font-style: italic;
+    color: gray;
+  }
+
+  #reserve-button:disabled {
+    background-color: transparent;
+    color: gray;
+    border: 2px solid gray;
+  }
+}

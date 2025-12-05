@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Overview</title>
+    <link rel="stylesheet" href="reservationConfirmation.scss" />
+    <script type="module" src="reservationConfirmation.ts"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <div class="nav-item" id="logo">
+                <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item" id="my-reservations">
+                    <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+                </li>
+                <li class="nav-item" id="logout">
+                    <a href="../../../index.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div>
+            <h2>Thank you, <span id="toristId"></span>, for choosing to eat at <span id="restaurantName"></span>.</h2>
+        </div>
+        <section id="info-reservation">
+            <h2>Reservation details:</h2>
+            <hr>
+            <p>Reservation date: <span id="date"></span>
+            <p>Meal type: <span id="meal"></span>
+            <p>Number of guests: <span id="guests"></span>
+        </section>
+        <section id="spanError" hidden>
+        </section>
+        <button type="button" id="cancel">Cancel reservation</button>
+    </main>
+</body>
+
+</html>

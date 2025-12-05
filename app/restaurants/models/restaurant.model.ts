@@ -1,4 +1,5 @@
 import { Meal } from "./meal.model";
+import { Reservation } from "./reservation";
 export interface Restaurant{
     id: number;
     name:string;
@@ -10,4 +11,5 @@ export interface Restaurant{
     status?:string;
     ownerId?:number;
     meals?: Meal[];
+    reservations?: Reservation[];
 }

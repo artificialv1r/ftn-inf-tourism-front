@@ -2,6 +2,8 @@ import { Restaurant } from "../models/restaurant.model";
 import { RestaurantFormData } from "../models/restaurantForm.model";
 import { Meal } from "../models/meal.model";
 import { MealForm } from "../models/mealForm.model";
+import { ReservationFormData } from "../models/restaurantReservationForm";
+import { Reservation } from "../models/reservation";
 
 export class RestaurantService {
     private apiUrl: string;
@@ -88,6 +90,24 @@ export class RestaurantService {
                 throw error
             });
     }
+    getReservationsById(id: string): Promise<Reservation[]> {
+        return fetch(`${this.apiUrl}/${id}/reservations`)
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+                        throw { status: response.status, message: errorMessage }
+                    })
+                }
+                return response.json()
+            })
+            .then((reservations: Reservation[]) => {
+                return reservations;
+            })
+            .catch(error => {
+                console.error('Error:', error.status)
+                throw error
+            });
+    }
     update(id: string, formData: RestaurantFormData): Promise<Restaurant> {
         return fetch(`${this.apiUrl}/${id}`, {
             method: 'PUT',
@@ -156,6 +176,62 @@ export class RestaurantService {
                         throw { status: response.status, message: errorMessage }
                     })
                 }
+            })
+            .catch(error => {
+                console.error('Error:', error.status)
+                throw error
+            });
+    }
+    
+    createReservation(restaurantId: number, reservationFormData: ReservationFormData): Promise<Reservation> {
+        const reservationapiUrl = `http://localhost:5105/api/restaurants/${restaurantId}/reservations`
+        return fetch(reservationapiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reservationFormData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+                        throw { status: response.status, message: errorMessage }
+                    })
+                }
+                return response.json()
+            })
+            .then((reservation: Reservation) => {
+                return reservation;
+            })
+            .catch(error => {
+                console.error('Error:', error.status)
+                throw error
+            });
+    }
+    deleteReservation(restaurantId: number, reservationId: number): Promise<void> {
+        return fetch(`http://localhost:5105/api/restaurants/${restaurantId}/reservations/${reservationId}`, { method: 'Delete' })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+                        throw { status: response.status, message: errorMessage }
+                    })
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error.status)
+                throw error
+            });
+    }
+    getReservationById(id: string, idReservation:string): Promise<Reservation> {
+        return fetch(`${this.apiUrl}/${id}/reservations/${idReservation}`)
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+                        throw { status: response.status, message: errorMessage }
+                    })
+                }
+                return response.json()
+            })
+            .then((reservations: Reservation) => {
+                return reservations;
             })
             .catch(error => {
                 console.error('Error:', error.status)

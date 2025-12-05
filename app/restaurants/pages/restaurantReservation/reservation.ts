@@ -22,7 +22,7 @@ function showMeals(meals: Meal[]): void {
         card.classList.add("meal-card");
 
         const img = document.createElement("img");
-        img.src = meal.imageUrl; 
+        img.src = meal.imageUrl;
         img.alt = meal.name;
 
         const name = document.createElement("h4");
@@ -41,8 +41,12 @@ function initializeData() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const restaurantId = urlParams.get('id');
+    const reservationButton = document.querySelector("#restaurantReservation") as HTMLButtonElement;
 
     loadMeals(restaurantId);
+     reservationButton.addEventListener("click", () => {
+        window.location.href = `../restaurantReservationForm/restaurantReservationForm.html?id=${restaurantId}`;
+    });
 }
 
 document.addEventListener("DOMContentLoaded", initializeData);
