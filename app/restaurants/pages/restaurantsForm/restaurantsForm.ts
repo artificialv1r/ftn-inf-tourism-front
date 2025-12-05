@@ -89,7 +89,6 @@ function AddMeal(id: string): void {
 
     restaurantService.getById(id).then(restaurant => {
         const order = restaurant.meals.length + 1;
-        console.log(order);
         const name = (document.querySelector('#nameMeal') as HTMLInputElement).value;
         const price = parseFloat((document.querySelector('#price') as HTMLInputElement).value);
         const imageUrl = (document.querySelector('#imageMeal') as HTMLInputElement).value;

@@ -1,0 +1,33 @@
+@use '../../../styles/global.scss';
+
+main {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 2px solid #6b3428;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #6b3428;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+p {
+    font-size: 25px;
+}
+
+#spanError {
+    width: 460px;
+    padding: 5px;
+    color: #D2042D;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: medium;
+    font-weight: bold;
+    margin-left: 380px;
+}

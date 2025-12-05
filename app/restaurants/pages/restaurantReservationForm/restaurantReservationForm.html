@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="restaurantReservationForm.scss">
+    <script type="module" src="restaurantReservationForm.ts"></script>
+    <title>Restaurant reservation</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <div class="nav-item" id="logo">
+                <a href="../../../index.html">Putovanje Kroz Gastronomiju</a>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+
+                <li class="nav-item" id="my-reservations">
+                    <a href="../../../users/pages/reservations/reservations.html">My Reservations</a>
+                </li>
+                <li class="nav-item" id="logout">
+                    <a href="../../../index.html">Logout</a>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div id="reservation-section">
+            <div id="reservation-form">
+                <label for="date-input" id="date">Please choose a date: </label>
+                <input id="date-input" name="date" type="date">
+                <span id="date-warning"></span>
+
+                <label for="meal-input" id="meal">Please choose meal type: </label>
+                <select id="meal-type" name="meal-type">
+                    <option value="Breakfast 08:00h">Breakfast 08:00h</option>
+                    <option value="Lunch 13:00h">Lunch 13:00h</option>
+                    <option value="Dinner 18:00h">Dinner 18:00h</option>
+                </select>
+                <span id="input-warning"></span>
+
+                <label for="guests-input" id="guests">Please type number of guests: </label>
+                <input id="guests-input" name="guests" type="number" min="1">
+                <span id="guest-warning"></span>
+            </div>
+        </div>
+        <div id="button-section">
+            <button id="reserve-button">Reserve</button>
+        </div>
+        </section>
+    </main>
+</body>
+
+</html>
